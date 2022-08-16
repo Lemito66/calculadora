@@ -5,6 +5,7 @@ import BotonClear from './componentes/Botones/Boton-Clear';
 import Pantalla from './componentes/Pantalla/Pantalla';
 import { useState } from 'react';
 import { evaluate } from 'mathjs'; // Libreria externa, npm install mathjs
+import LogoFreeCodeCamp from './componentes/Logo/Logo-freeCodeCamp';
 
 
 function App() {
@@ -16,8 +17,22 @@ function App() {
   };
 
   const calcularResultado = () => {
-    if (input){// Si la cadena de caracteres tiene algo 
-      setInput(evaluate(input));// Evaluan los valores que se encuentran
+    let contador = 0
+    if (input){// Si la cadena de caracteres tiene algo
+      const verInput = input;
+      if (input[0] === '*' || (input[0] === '+') || (input[0] === '/') ) {
+        alert('Error, la operación inicia con * o / o +')
+      }
+      for (const iterator of verInput) {
+        if (iterator === '*' || (iterator === '-') || (iterator === '+') || (iterator === '/') ) {
+          contador +=1;
+        }
+      }
+      if (contador === 1) {
+        setInput(evaluate(input));// Evaluan los valores que se encuentran
+      } else {
+        alert('No se puede realizar la operación');
+      } 
     }else{
       alert('Ingrese valores para realizar los cálculos');
     }
@@ -26,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <LogoFreeCodeCamp/>
       <div className='contenedor-calculadora'>
         <Pantalla input={input}/>
         <div className='fila'>

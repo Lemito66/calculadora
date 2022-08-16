@@ -1,8 +1,8 @@
 import React from "react";
 import imagenLogo from '../../imagenes/freecodecamp-logo.png';
-import '../../hojas-de-estilo/Logo/'
+import '../../hojas-de-estilo/Logo/Freecodecamp-Logo.css'
 
-function logoFreeCodeCamp(){
+function LogoFreeCodeCamp(){
     return(
         <div className='freecodecamp-logo-contenedor'>
             <img 
@@ -13,4 +13,4 @@ function logoFreeCodeCamp(){
     )
 
 }
-export default logoFreeCodeCamp;
+export default LogoFreeCodeCamp;
